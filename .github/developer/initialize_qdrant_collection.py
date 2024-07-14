@@ -8,6 +8,10 @@ load_dotenv()
 QDRANT_URL = os.getenv('QD_URL')
 QDRANT_API_KEY = os.getenv('QD_API_KEY')
 
+# デバッグ用に環境変数をプリント
+print(f"QD_URL: {QDRANT_URL}")
+print(f"QD_API_KEY: {QDRANT_API_KEY}")
+
 # APIキーが設定されているか確認
 if QDRANT_URL is None:
     raise ValueError("QD_URL is not set. Please check your .env file.")
