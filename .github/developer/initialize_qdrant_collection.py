@@ -32,7 +32,7 @@ if QDRANT_URL is None:
 if QDRANT_API_KEY is None:
     raise ValueError("QD_API_KEY is not set. Please check your .env file.")
 
-print(f"API Key: {QDRANT_API_KEY[:5]}...{QDRANT_API_KEY[-5:]}")  # API keyの最初と最後の5文字のみを表示
+#print(f"API Key: {QDRANT_API_KEY[:5]}...{QDRANT_API_KEY[-5:]}")  # API keyの最初と最後の5文字のみを表示
 
 client = QdrantClient(url=QDRANT_URL, api_key=QDRANT_API_KEY)
 print(f"Attempting to connect to Qdrant at: {QDRANT_URL}")
