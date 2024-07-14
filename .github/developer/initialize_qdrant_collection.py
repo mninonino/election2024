@@ -27,9 +27,11 @@ print(f"QD_API_KEY: {QDRANT_API_KEY}")
 
 # APIキーが設定されているか確認
 if QDRANT_URL is None:
+    print("Error: QD_URL is not set. Please check your .env file.")
     raise ValueError("QD_URL is not set. Please check your .env file.")
 
 if QDRANT_API_KEY is None:
+    print("Error: QD_API_KEY is not set. Please check your .env file.")
     raise ValueError("QD_API_KEY is not set. Please check your .env file.")
 
 #print(f"API Key: {QDRANT_API_KEY[:5]}...{QDRANT_API_KEY[-5:]}")  # API keyの最初と最後の5文字のみを表示
