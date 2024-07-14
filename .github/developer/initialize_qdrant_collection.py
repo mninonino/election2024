@@ -1,3 +1,5 @@
+print("Starting the script execution...")  # スクリプトの開始を確認
+
 from qdrant_client import QdrantClient
 from qdrant_client.http import models
 from dotenv import load_dotenv
@@ -5,6 +7,8 @@ import os
 
 # .envファイルのパスを指定
 env_path = os.path.join(os.path.dirname(__file__), '.github', 'scripts', '.env')
+# .envファイルのパスをデバッグ出力
+print(f"Loading .env file from: {env_path}")
 load_dotenv(dotenv_path=env_path)
 
 QDRANT_URL = os.getenv('QD_URL')
