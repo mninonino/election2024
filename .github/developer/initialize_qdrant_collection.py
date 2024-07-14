@@ -8,6 +8,13 @@ load_dotenv()
 QDRANT_URL = os.getenv('QD_URL')
 QDRANT_API_KEY = os.getenv('QD_API_KEY')
 
+# APIキーが設定されているか確認
+if QDRANT_URL is None:
+    raise ValueError("QD_URL is not set. Please check your .env file.")
+
+if QDRANT_API_KEY is None:
+    raise ValueError("QD_API_KEY is not set. Please check your .env file.")
+
 print(f"API Key: {QDRANT_API_KEY[:5]}...{QDRANT_API_KEY[-5:]}")  # API keyの最初と最後の5文字のみを表示
 
 client = QdrantClient(url=QDRANT_URL, api_key=QDRANT_API_KEY)
