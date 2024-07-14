@@ -9,6 +9,13 @@ import os
 env_path = os.path.join(os.path.dirname(__file__), '.github', 'scripts', '.env')
 # .envファイルのパスをデバッグ出力
 print(f"Loading .env file from: {env_path}")
+
+# .envファイルが存在するか確認
+if not os.path.exists(env_path):
+    print(f"Error: .env file not found at {env_path}")
+else:
+    print(f".env file found at {env_path}")
+
 load_dotenv(dotenv_path=env_path)
 
 QDRANT_URL = os.getenv('QD_URL')
