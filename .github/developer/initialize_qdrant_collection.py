@@ -3,7 +3,9 @@ from qdrant_client.http import models
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
+# .envファイルのパスを指定
+env_path = os.path.join(os.path.dirname(__file__), '.github', 'scripts', '.env')
+load_dotenv(dotenv_path=env_path)
 
 QDRANT_URL = os.getenv('QD_URL')
 QDRANT_API_KEY = os.getenv('QD_API_KEY')
